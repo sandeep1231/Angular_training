@@ -1,0 +1,30 @@
+<!-- NgClass start -->
+ <h2 class="text-success">Welcome</h2>
+<h2 [ngClass] = "{'text-success':true}">Welcome</h2>
+<h2 [ngClass] = "successClass">Welcome</h2> 
+
+<h2 [class.text-success] = "true">Welcome</h2> 
+
+<ul *ngFor="let person of people">
+  <li [ngClass]="{
+    'text-success':person.country === 'UK',
+    'text-special':person.country === 'USA',
+    'text-danger':person.country === 'HK'
+  }">{{ person.name }} ({{ person.country }})
+  </li>
+</ul> 
+ <ul *ngFor="let person of people">
+        <li [class.text-success]="person.country === 'UK'"
+            [class.text-primary]="person.country === 'USA'"
+            [class.text-danger]="person.country === 'HK'">{{ person.name }} ({{ person.country }})
+        </li>
+      </ul> 
+ <!-- NgClass end -->
+
+ <!-- NgStyle -->
+ <div [ngStyle]="{'color':'green'}">Welcome</div>
+ <div [style.color]="'red'">Welcome</div>
+
+ <div [ngStyle]="{'color':hasError ? 'red':'yellow'}">Welcome</div> 
+  <div [ngStyle]="titlestyle">Welcome</div> 
+ <div [ngStyle]="{'width.%':50}">Welcome</div>  

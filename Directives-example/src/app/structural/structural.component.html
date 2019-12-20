@@ -1,0 +1,35 @@
+<!-- 
+ <div *ngFor = "let color of colors; even as e">   <!-- first, last, even, odd, index 
+    <h2>{{e}} {{color}}</h2>
+    </div> -->
+
+<!-- NgFor -->
+    <ul>
+        <li *ngFor="let person of people first as i">
+          {{i}} - {{ person.name }}
+        </li>
+    </ul>
+
+<!-- NgIf -->
+     <div hidden="true">
+          Welcome to Angular training
+    </div>
+    <div *ngIf="false">
+        Welcome to Angular training
+  </div>
+  <ul *ngFor="let person of people; index as i">
+    <li *ngIf="person.age < 33"> 
+   {{i+1}} - {{ person.name }} ({{ person.age }})
+    </li>
+  </ul>
+  <ul *ngFor="let person of people" *ngIf="person.age < 30"> 
+    <li>{{ person.name }}</li>
+  </ul> 
+
+  <!-- NgSwitch -->
+  <div [ngSwitch]="color">
+      <div *ngSwitchCase="'red'">You Picked red color</div>
+      <div *ngSwitchCase="'blue'">You Picked blue color</div>
+      <div *ngSwitchCase="'black'">You Picked black color</div>
+      <div *ngSwitchDefault>Pick again</div>
+    </div>

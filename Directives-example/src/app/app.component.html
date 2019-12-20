@@ -1,0 +1,46 @@
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <span>Angular Training</span>
+</div>
+
+<div style="text-align: center;">
+  <h2 appChangeColor>Welcome to {{title}}</h2>
+<!-- String interolation -->
+<h2>{{2+2}}</h2>
+ <h2>{{"Welcome " + userName }}</h2> 
+<h2>{{userName.length}}</h2>
+<h2>{{userName.toUpperCase()}}</h2>
+<h2>{{greetuser()}}</h2>
+
+
+<!-- Property binding -->
+<input type="text" value="shashank" [id]="myId"> <br>
+<input type="text" value="shashank" id="{{myId}}" [disabled]="isDisabled">
+
+
+<!-- Event Binding -->
+<h4>{{title}}</h4>
+<button (click)="changeMyTitle($event)">Title is changed on click of this button.</button>
+
+
+<!-- Two-way Data Binding -->
+<input type = "text" [(ngModel)]="userName" >
+<br>
+<h4>Welcome: {{userName}}</h4>
+
+
+<!-- Component Intercation -->
+<h2>{{message}}</h2>
+<app-child (notify)="childevent($event)" [parentdata]="userName"></app-child>
+
+</div>
+<!-- Structural directive -->
+<app-structural></app-structural>
+<app-attribute></app-attribute>
+<router-outlet></router-outlet>
